@@ -18,14 +18,14 @@ void command(int8_t cmd, int16_t dat)
 {
   delay(20);
   
-  cmdbuf[0] = 0x7e; // bajt startu
-  cmdbuf[1] = 0xFF; // wersja
-  cmdbuf[2] = 0x06; // liczba bajtow polecenia
-  cmdbuf[3] = cmd;  // polecenie
-  cmdbuf[4] = 0x00; // 0x00 = no feedback, 0x01 = feedback
-  cmdbuf[5] = (int8_t)(dat >> 8); // parametr DAT1
-  cmdbuf[6] = (int8_t)(dat); //  parametr DAT2
-  cmdbuf[7] = 0xef; // bajt konczacy
+  cmdbuf[0] = 0x7e; 
+  cmdbuf[1] = 0xFF; 
+  cmdbuf[2] = 0x06; 
+  cmdbuf[3] = cmd; 
+  cmdbuf[4] = 0x00; 
+  cmdbuf[5] = (int8_t)(dat >> 8); 
+  cmdbuf[6] = (int8_t)(dat); 
+  cmdbuf[7] = 0xef; 
  
   for (uint8_t i = 0; i < 8; i++)
   {
